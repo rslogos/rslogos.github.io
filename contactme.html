@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rachel Hall-Smith</title>
+<meta name="keywords" content="Rachel Hall Smith" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="wrapper">
+	<div id="left_column">
+		<div id="site_title">
+			<h1><a href="http://rachelhallsmith.co.uk" target="_parent"><img src="images/logo.png" /><span>Rachel Hall-Smith</span></a></h1>
+		</div>
+		<div id="sidebar">
+			<div class="news_section">
+				<h2>Testamonials</h2>
+				<div class="news_box">
+					<p><span id="news_txt">Rachel is an enthusiastic writer who writes for the Christian community and a wider audience...She has great empathy with her characters and this produces a story that you both enjoy and care about</span><br /><small>Written by <strong id="news_by">S.D.</strong></small></p>
+				</div>
+				<script>
+					var Testamonials = [
+						['I have known Rachel for many years and ...she has shown a constant relationship with Jesus and a desire to be used by Him in the many creative areas of her life', 'S.H.'],
+						['Rachel\'s stories from the Bible are intelligently and interestingly translated and delightfully re-written into the language of our time', 'J.P.'],
+						['Rachel is an enthusiastic writer who writes for the Christian community and a wider audience...She has great empathy with her characters and this produces a story that you both enjoy and care about', 'S.D.'],
+						['Full of believable characters with personality, humour, pathos and integrity', 'J.P.'],
+						['An intelligent reinvigoration of the original message', 'P.H.']
+					];
+					var Testamonial = Testamonials[Math.floor(Math.random() * Testamonials.length)];
+					document.getElementById('news_txt').innerHTML = Testamonial[0];
+					document.getElementById('news_by').innerHTML = Testamonial[1];
+				</script>
+			</div>
+		</div>
+	</div>
+    
+	<div id="right_column">
+		<div id="menu">
+		<ul>
+			<li><a href="./">Home</a></li>
+			<li><a href="./audiobooks.html">Audio Books</a></li>
+			<li><a href="./resources.html">Resources</a></li>
+			<li><a href="./publications.html">Publications</a></li>
+			<li><a href="./contactme.html">Contact me!</a></li>
+		</ul>
+		</div>
+
+		<div id="content_wrapper">
+			<div id="content">
+				<h2>Contact me!</h2>
+				
+				<p>As a freelance writer I welcome commissions, so if you require resources for a specific occasion, please feel free to contact me.</p>
+				<p><img src="email.jpg" /></p>
+			</div>
+		</div>
+		
+		<div id="content_bottom"></div>
+	</div>
+</div>
+
+<div id="footer_wrapper">
+	<div id="footer">
+		<a href="/">Rachel Hall-Smith</a> |
+		Designed by <a href="http://www.iwebsitetemplate.com" target="_blank" ref="nofollow">WebTemplates</a>
+	</div> 
+</div>
+
+</body>
+</html>
