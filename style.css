@@ -303,4 +303,11 @@ img { margin: 0px; padding: 0px; border: none; }
 .footer_menu .last_menu {
 	border: none;
 }
-/* end of footer */
+
+audio::-webkit-media-controls {
+    overflow: hidden !important
+}
+audio::-webkit-media-controls-enclosure {
+    width: calc(100% + 32px);
+    margin-left: auto;
+}
