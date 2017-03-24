@@ -51,12 +51,14 @@
 
 				<div id="htmla"></div>
 				<script>
+				var curr_plid = '';
 				function showplayer(lnam){
 					if (document.getElementById &&!document.all) {
 						var elem = document.getElementById(lnam);
 						if (elem.style.display == 'none') {
 							elem.style.display = 'block';
 							if (document.getElementById(lnam + 'h5').length !== 0) document.getElementById(lnam + 'h5').play();
+							curr_plid = lnam + 'h5';
 						} else {
 							elem.style.display = 'none';
 							if (document.getElementById(lnam + 'h5').length !== 0) document.getElementById(lnam + 'h5').pause();
@@ -66,7 +68,7 @@
 				document.addEventListener('play', function(e){
 					var audiop = document.getElementsByTagName('audio');
 					for(var i = 0, len = audiop.length; i < len; i++){
-						if(audiop[i] != e.target){
+						if(audiop[i].id !== curr_plid){
 							audiop[i].pause();
 						}
 					}
