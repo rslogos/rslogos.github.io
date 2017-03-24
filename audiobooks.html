@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Rachel Hall-Smith</title>
+<meta name="keywords" content="Rachel Hall Smith" />
+<link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="wrapper">
+	<div id="left_column">
+		<div id="site_title">
+			<h1><a href="./" target="_parent"><img src="images/logo.png" /><span>Rachel Hall-Smith</span></a></h1>
+		</div>
+		<div id="sidebar">
+			<div class="news_section">
+				<h2>Testamonials</h2>
+				<div class="news_box">
+					<p><span id="news_txt">Rachel is an enthusiastic writer who writes for the Christian community and a wider audience...She has great empathy with her characters and this produces a story that you both enjoy and care about</span><br /><small>Written by <strong id="news_by">S.D.</strong></small></p>
+				</div>
+				<script>
+					var Testamonials = [
+						['I have known Rachel for many years and ...she has shown a constant relationship with Jesus and a desire to be used by Him in the many creative areas of her life', 'S.H.'],
+						['Rachel\'s stories from the Bible are intelligently and interestingly translated and delightfully re-written into the language of our time', 'J.P.'],
+						['Rachel is an enthusiastic writer who writes for the Christian community and a wider audience...She has great empathy with her characters and this produces a story that you both enjoy and care about', 'S.D.'],
+						['Full of believable characters with personality, humour, pathos and integrity', 'J.P.'],
+						['An intelligent reinvigoration of the original message', 'P.H.']
+					];
+					var Testamonial = Testamonials[Math.floor(Math.random() * Testamonials.length)];
+					document.getElementById('news_txt').innerHTML = Testamonial[0];
+					document.getElementById('news_by').innerHTML = Testamonial[1];
+				</script>
+			</div>
+		</div>
+	</div>
+    
+	<div id="right_column">
+		<div id="menu">
+		<ul>
+			<li><a href="./">Home</a></li>
+			<li><a href="./audiobooks.html">Audio Books</a></li>
+			<li><a href="./resources.html">Resources</a></li>
+			<li><a href="./publications.html">Publications</a></li>
+			<li><a href="./contactme.html">Contact me!</a></li>
+		</ul>
+		</div>
+
+		<div id="content_wrapper">
+			<div id="content">
+				<h2>Audio Books (listen only)</h2>
+
+				<div id="htmla"></div>
+				<script>
+				function showplayer(lnam){
+					if (document.getElementById &&!document.all) {
+						var elem = document.getElementById(lnam);
+						if (elem.style.display == 'none') {
+							elem.style.display = 'block';
+							if (document.getElementById(lnam + 'h5').length !== 0) document.getElementById(lnam + 'h5').play();
+						} else {
+							elem.style.display = 'none';
+							if (document.getElementById(lnam + 'h5').length !== 0) document.getElementById(lnam + 'h5').pause();
+						}
+					}
+				}
+				document.addEventListener('play', function(e){
+					var audiop = document.getElementsByTagName('audio');
+					for(var i = 0, len = audiop.length; i < len; i++){
+						if(audiop[i] != e.target){
+							audiop[i].pause();
+						}
+					}
+				}, true);
+				var audiobooks = [
+					[
+						['<b>The Gospel according to Peter</b>'], 
+						[
+							['Chapter 1', 'gospel_peter-mp3/1.mp3'],
+							['Chapter 2', 'gospel_peter-mp3/2.mp3'],
+							['Chapter 3', 'gospel_peter-mp3/3.mp3'],
+							['Chapter 4', 'gospel_peter-mp3/4.mp3'],
+							['Chapter 5', 'gospel_peter-mp3/5.mp3']
+						]
+					],
+					[
+						['<b>Women in the life of Jesus</b>'],
+						[
+							['Elizabeth\'s Story', 'women_life_jesus-mp3/1.mp3'],
+							['A Sinner\'s Story', 'women_life_jesus-mp3/2.mp3'],
+							['An Adulterer\'s Story', 'women_life_jesus-mp3/3.mp3'],
+							['A Sick Woman\'s Story', 'women_life_jesus-mp3/4.mp3'],
+							['A Mother\'s Story', 'women_life_jesus-mp3/5.mp3'],
+							['A Widow\'s Story', 'women_life_jesus-mp3/6.mp3']
+						]
+					],
+					[
+						['The \'<b>Retold</b>\' series features;'],
+						[
+							['Samson', 'retold-mp3/1.mp3'],
+							['Sarah', 'retold-mp3/2.mp3'],
+							['Joshua', 'retold-mp3/3.mp3'],
+							['Jonah', 'retold-mp3/4.mp3'],
+							['Peter', 'retold-mp3/5.mp3'],
+							['Noah', 'retold-mp3/6.mp3']
+						]
+					],
+					[
+						['<b>Biblical Blogs</b>'],
+						[
+							['Adam + Eve', 'biblical_blogs-mp3/1.mp3'],
+							['Simon Peter', 'biblical_blogs-mp3/2.mp3'],
+							['Dorcas', 'biblical_blogs-mp3/3.mp3'],
+							['Nathanael', 'biblical_blogs-mp3/4.mp3'],
+							['Esau', 'biblical_blogs-mp3/5.mp3'],
+							['Doubting Thomas', 'biblical_blogs-mp3/6.mp3']
+						]
+					],
+					[
+						['<b>Christmas series</b>'],
+						[
+							['Joseph\'s Story', 'christmas-mp3/1.mp3'],
+							['Mary\'s Story', 'christmas-mp3/2.mp3'],
+							['The Shepherd\'s Story', 'christmas-mp3/3.mp3'],
+							['Simeon\'s Story', 'christmas-mp3/4.mp3'],
+							['A Wiseman\'s Story', 'christmas-mp3/5.mp3'],
+							['An Angel\'s Story', 'christmas-mp3/6.mp3']
+						]
+					]
+				];
+				var i, plid = 1, htmla = '';
+				for (i = 0; i < audiobooks.length; ++i) {
+					var name = audiobooks[i][0], audios = audiobooks[i][1];
+					htmla += '<p style="margin-bottom:10px;">' + name + '</p>';
+					var i2;
+					for (i2 = 0; i2 < audios.length; ++i2) {
+						var audio = audios[i2];
+						htmla += '<div style="margin-bottom:10px;">';
+							htmla += '&bull; <a href="javascript:;" onclick="showplayer(\'player' + plid + '\')">' + audio[0] + '</a> <br />';
+							htmla += '<div id="player' + plid +'" style="display: none;">';
+							if (window.HTMLAudioElement && document.createElement('audio').canPlayType('audio/mpeg')) {
+								htmla += '<audio id="player' + plid +'h5" controls><source src="files/audiobooks/' + audio[1] + '" type="audio/mpeg"></audio>';
+							} else {
+								htmla += '<object type="application/x-shockwave-flash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" codebase="http://fpdownload.macromedia.com/get/flashplayer/current/swflash.cab" width="200" height="20">';
+								htmla += '<param name="src" value="player.swf" />';
+								htmla += '<param name="bgcolor" value="#F9E292" />';
+								htmla += '<param name="flashvars" value="mp3=files/audiobooks/' + audio[1] + '" />';
+								htmla += '<embed src="player.swf" width="200" height="20" bgcolor="#F9E292" flashvars="mp3=files/audiobooks/' + audio[1] + '"></embed>';
+								htmla += '</object>';
+							}
+							htmla += '</div>';
+						htmla += '</div>';
+						++plid;
+					}
+					
+				}
+				document.getElementById('htmla').innerHTML = htmla;
+				</script>
+				<noscript><p><strong>Javascript is required to see this page.</strong></p></noscript>
+
+				<p>Familiar events, presented in contemporary language by upbeat characters.  Stories relevant for the modern age (150 words each).</p>
+
+				<p><form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+					<input type="hidden" name="cmd" value="_donations">
+					<input type="hidden" name="business" value="logos100@hotmail.co.uk">
+					<input type="hidden" name="lc" value="US">
+					<input type="hidden" name="item_name" value="RachelHallSmith">
+					<input type="hidden" name="item_number" value="RachelHallSmith">
+					<input type="hidden" name="no_note" value="0">
+					<input type="hidden" name="currency_code" value="GBP">
+					<input type="hidden" name="bn" value="PP-DonationsBF:btn_donateCC_LG.gif:NonHostedGuest">
+					<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+					<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+				</form></p>
+			</div>
+		</div>
+		
+		<div id="content_bottom"></div>
+	</div>
+</div>
+
+<div id="footer_wrapper">
+	<div id="footer">
+		&copy; <a href="/">Rachel Hall-Smith</a> |
+		Designed by <a href="http://www.iwebsitetemplate.com" target="_blank" ref="nofollow">WebTemplates</a>
+	</div> 
+</div>
+
+</body>
+</html>
