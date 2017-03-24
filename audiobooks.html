@@ -57,8 +57,8 @@
 						var elem = document.getElementById(lnam);
 						if (elem.style.display == 'none') {
 							elem.style.display = 'block';
-							if (document.getElementById(lnam + 'h5').length !== 0) document.getElementById(lnam + 'h5').play();
 							curr_plid = lnam + 'h5';
+							if (document.getElementById(lnam + 'h5').length !== 0) document.getElementById(lnam + 'h5').play();
 						} else {
 							elem.style.display = 'none';
 							if (document.getElementById(lnam + 'h5').length !== 0) document.getElementById(lnam + 'h5').pause();
